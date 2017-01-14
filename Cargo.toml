@@ -1,0 +1,6 @@
+[package]
+name = "tokio-workq"
+version = "0.1.0"
+authors = ["Hideo Hattori <hattori-h@klab.com>"]
+
+[dependencies]
