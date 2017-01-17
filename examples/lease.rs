@@ -21,8 +21,7 @@ pub fn main() {
                 // Start with a ping
                 client.lease(vec!["ping1".to_string()], None)
                     .and_then(move |_| {
-                        println!("Pong received...");
-                        client.call("Goodbye".to_string())
+                        println!("result received...");
                     })
                     .and_then(|response| {
                         println!("CLIENT: {:?}", response);

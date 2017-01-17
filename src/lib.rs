@@ -43,8 +43,7 @@ impl Client {
             Some(v) => v,
             None => 10000,
         };
-        let names_str = names.join(" ");
-        let resp = self.call(format!("lease {} {}", names_str, timeout).to_string())
+        let resp = self.call(format!("lease {} {}", names.join(" "), timeout).to_string())
             .and_then(|resp| {
                 if resp != "[lease]" {
                     Err(io::Error::new(io::ErrorKind::Other, "expected lease command"))
