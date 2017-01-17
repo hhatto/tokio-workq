@@ -3,13 +3,9 @@ extern crate tokio_workq as workq;
 #[macro_use]
 extern crate futures;
 extern crate tokio_core;
-extern crate tokio_proto;
-extern crate tokio_service;
 
 use futures::Future;
-
 use tokio_core::reactor::Core;
-use tokio_service::Service;
 
 pub fn main() {
     let mut core = Core::new().unwrap();
@@ -22,6 +18,7 @@ pub fn main() {
                 client.lease(vec!["ping1".to_string()], None)
                     .and_then(move |_| {
                         println!("result received...");
+                        Ok(())
                     })
                     .and_then(|response| {
                         println!("CLIENT: {:?}", response);
