@@ -6,4 +6,6 @@ authors = ["Hideo Hattori <hattori-h@klab.com>"]
 [dependencies]
 futures = "0.1"
 tokio-core = "0.1"
+tokio-proto = "0.1"
+tokio-service = "0.1"
 tokio-line = { git = "https://github.com/tokio-rs/tokio-line" }
